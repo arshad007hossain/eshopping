@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import {Row,Col,Image,ListGroup,Card,Button} from 'react-bootstrap'
-import products from '../products'
+// import products from '../products'
 import Rating from '../components/Rating'
-// import axios from 'axios'
+import axios from 'axios'
 
 const ProductScreen= ({value,text,color}) => {
-//   const [product, setProduct] = useState({})
+  const [product, setProduct] = useState({})
 
   const { id } = useParams();
 
-//   useEffect(() => {
-//     const getProduct = async () => {
-//       const {data} = await axios.get(`/api/products/${id}`)
+  useEffect(() => {
+    const getProduct = async () => {
+      const {data} = await axios.get(`/api/products/${id}`)
 
-//       setProduct(data)
-//     }
+      setProduct(data)
+    }
 
-//     getProduct()
-//   }, [id])
+    getProduct()
+  }, [id])
 
 
-  const product = products.find((p) => p._id === (id));
+  // const product = products.find((p) => p._id === (id));
   return (
     <div>
       <Link to='/'><Button className='btn btn-dark my-3'>Go Back</Button></Link>
