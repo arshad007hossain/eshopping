@@ -73,8 +73,12 @@ const removeFromCartHandler = (id) => {
                     </Button>
                   </Col>
                 </Row>
+                
               </ListGroup.Item>
             ))}
+            <ListGroup.Item>
+            <Link to='/'><Button className='btn btn-dark my-3'>Go Back</Button></Link>
+            </ListGroup.Item>
           </ListGroup>
         )}
       </Col>
